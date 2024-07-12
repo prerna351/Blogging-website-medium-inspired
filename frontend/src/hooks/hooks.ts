@@ -35,10 +35,10 @@ export const useBlog = ({ id }: {id: string}): UseBlogResult => {
                         Authorization: localStorage.getItem("token") || ''
                     }
                 });
-                console.log('API response:', response.data);
+                
                 setBlog(response.data); // Ensure this matches the API response structure
                 setLoading(false);
-                console.log(blog);
+                
             } catch (error) {
                 console.error("Error fetching blog:", error);
                 setLoading(false);
@@ -67,7 +67,7 @@ export const useBlogs = () => {
             }
         })
             .then(response => {
-                console.log(response.data)
+               
                 setBlogs(response.data.blogs);
                 setLoading(false);
             })

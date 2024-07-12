@@ -2,7 +2,7 @@ import { AppBar } from "../components/AppBar";
 import { FullBlog } from "../components/FullBlog";
 import { useBlog } from "../hooks/hooks"
 import {  useNavigate, useParams } from "react-router-dom";
-
+import { Skeleton } from "../components/Skeleton";
 
 export const Blog = () => {
   const navigate = useNavigate();
@@ -14,9 +14,24 @@ export const Blog = () => {
     id: id || ""
   });
 
-  if(loading ){
-      return <div>loading...</div>
-  }
+  if(loading){
+    return <div >
+      
+      <AppBar label="write" onClick={() => {
+      navigate('/createBlog')
+  }}></AppBar>
+
+      <div className="flex flex-col justify-center items-center">
+          <Skeleton></Skeleton>
+          <Skeleton></Skeleton>
+          <Skeleton></Skeleton>
+          <Skeleton></Skeleton>
+          <Skeleton></Skeleton>
+          <Skeleton></Skeleton>
+          <Skeleton></Skeleton>
+      </div>
+    </div>
+}
 
  
   return (

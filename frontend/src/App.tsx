@@ -3,7 +3,7 @@ import { Signup } from "./pages/Signup"
 import { Blog } from "./pages/Blog"
 import { Blogs } from "./pages/Blogs"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { Publish } from "./pages/Publish"
+// import { Publish } from "./pages/Publish"
 import { TextEditor } from "./pages/TextEditor"
 
 function App() {

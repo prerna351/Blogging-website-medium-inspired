@@ -1,5 +1,5 @@
 sign up page
--add feature to see the password
+-add feature to see the password DONE
 
 blogs page
 - add a search bar to search a particular blog
@@ -20,3 +20,4 @@ on MyAvatar - show : sign out, profile
 <!-- at the backend add date and time in the database -->
 
 textEditor page - disable the publish button unless their is content in title and content 
+                - increase text area row

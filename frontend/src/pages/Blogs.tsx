@@ -1,12 +1,32 @@
 import { useNavigate } from "react-router-dom";
 import { AppBar } from "../components/AppBar";
 import { BlogCard } from "../components/BlogCard";
-import { useBlogs } from "../hooks/hooks";
+
 import { Skeleton } from "../components/Skeleton";
+import {  useRecoilValue } from "recoil";
+import {queryAtom} from '../store/atoms/queryAtom.js'
+import { blogsAtom, loadingAtom } from "../store/atoms/blogsAtom.js";
+import { useFetchBlogs } from "../hooks/useFetchBlogs.js";
+import { useEffect } from "react";
+// import { currentPageAtom, limitAtom, totalPagesAtom } from "../store/atoms/pageAtom.js";
 
 export const Blogs = () => {
-    const {loading, blogs} = useBlogs()
+    // const {loading, blogs} = useBlogs();
+    const blogs = useRecoilValue(blogsAtom);
+    const loading = useRecoilValue(loadingAtom);
+    const fetchBlogs = useFetchBlogs();
     const navigate = useNavigate();
+    const query = useRecoilValue(queryAtom);
+    
+  
+    useEffect(() => {
+        fetchBlogs();
+    }, []);
+
+    const filteredBlogs = blogs.filter(blog =>
+      blog.title.toLowerCase().includes(query.toLowerCase())
+    );
+
     if(loading){
         return <div>
           <AppBar label="write" onClick={() => {
@@ -30,19 +50,26 @@ export const Blogs = () => {
         <AppBar onClick={() => {
           navigate('/createBlog')
       }}  label="write"></AppBar>
+    <div className="w-screen flex-1 flex justify-center">  
+      <div className="overflow-x-hidden flex p-5 w-screen max-w-screen-lg justify-center flex-col items-center ">
+        {filteredBlogs.length === 0 ? (
+            <div className="mt-10">No blogs found.</div>
+          ) : (
+            filteredBlogs.reverse().map(blog => (
+              <BlogCard
+                id={blog.id}
+                key={blog.id}
+                authorName={blog.author.name || "Anonymous"}
+                title={blog.title}
+                content={blog.content}
+                publishedDate={blog.createdAt}
+                titleFontSize={'3xl'}
+                isAuthor={false}
+              ></BlogCard>
+            ))
+          )}
       
-    <div className="flex justify-center flex-col items-center">
-      {[...blogs].reverse().map(blog => (
-        <BlogCard
-        id={blog.id}
-        key={blog.id}
-        authorName={blog.author.name || "Anonymous"}
-        title={blog.title}
-        content={blog.content}
-        publishedDate="Dec 3, 2023"
-      ></BlogCard>
-      ))}
-      
+      </div>
     </div>
     </div>
   );

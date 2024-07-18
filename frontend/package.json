@@ -12,9 +12,11 @@
   "dependencies": {
     "@presha/common_blog": "^1.0.0",
     "axios": "^1.7.2",
+    "cors": "^2.8.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.24.1"
+    "react-router-dom": "^6.24.1",
+    "recoil": "^0.7.7"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

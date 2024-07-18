@@ -44,10 +44,10 @@ export const TextEditor:React.FC = () => {
         }
     };
   return (
-    <div>
+    <div className='overscroll-none'>
       <AppBar label="Publish"   onClick={handlePublish} ></AppBar>
         {error && <div>{error}</div>}
-      <CreateBlogArea title={title} setTitle={setTitle} content={content} setContent={setContent} rows={8}></CreateBlogArea>
+      <CreateBlogArea title={title} setTitle={setTitle} content={content} setContent={setContent} rows={20}></CreateBlogArea>
     </div>
   );
 }

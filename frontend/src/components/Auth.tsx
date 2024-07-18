@@ -3,25 +3,25 @@ import { Link,  useNavigate } from "react-router-dom";
 import { SignupInput } from "@presha/common_blog";
 import axios from "axios";
 import { BACKEND_URL } from "../config";
+import { useRecoilState } from "recoil";
+import { userCredentialAtom } from "../store/atoms/userAtom";
+
+
 
 
 //have a separate sign up and signin component
 
 export const Auth = ({ type }: { type: "signup" | "signin" }) => {
-    const [postInputs, setPostInputs] = useState<SignupInput>({
-        name: "",
-        email: "",
-        password: ""
-    });
+    const [postInputs, setPostInputs] = useRecoilState<SignupInput>(userCredentialAtom);
     const navigate = useNavigate();
-
+    
     async function sendRequest () {
       try{
         const response =  await axios.post(`${BACKEND_URL}/api/v1/user/${type=== "signup" ? "signup": "signin"}`,postInputs)
         //here i get jwt as the response
         const jwt = response.data;
         localStorage.setItem("token", jwt);
-        navigate("/blogs");
+        navigate(`/blogs`);
       }catch(e){
         alert("error while signing up")
         console.log(e);

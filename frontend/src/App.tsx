@@ -5,6 +5,7 @@ import { Blogs } from "./pages/Blogs"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 // import { Publish } from "./pages/Publish"
 import { TextEditor } from "./pages/TextEditor"
+import { BloggerProfilePage } from "./pages/BloggerPage"
 
 function App() {
  
@@ -18,6 +19,8 @@ function App() {
           <Route path="/blogs" element={<Blogs></Blogs>}></Route>
           <Route path="/blog/:id" element={<Blog />} />
           <Route path="/createBlog" element={<TextEditor />} />
+          <Route path="/blogger-profile" element={<BloggerProfilePage />} />
+
           {/* <Route path="/myStories" element={<YourStoriesPage />} /> */}
           {/* <Route path="/publish" element={<Publish></Publish>}></Route> */}
 

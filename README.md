@@ -1,6 +1,6 @@
 
 
-blog page
+<!-- blog page
 i have fetched all the blogs at once and stored in an atom and thus caching not needed for opening a particular blog
 but when goes back in my tab the blogs are fetched again
 add pagination  
@@ -18,7 +18,7 @@ add a nice color scheme to the project
 textEditor page - disable the publish button untill their is content in title and content 
                 
 for smaller screen make the search bar an icon and then expand to smaller search bar 
-------------------------------------------------------------------------
+------------------------------------------------------------------------ -->
 <!-- DONE
 added toggle password visibliity
 added search component in frontend + functionality-->

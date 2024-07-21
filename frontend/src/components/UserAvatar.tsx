@@ -36,7 +36,7 @@ export const UserAvatar = () => {
       });
       setUserCredential({ email: '', name: '', password: '' });
       localStorage.removeItem('token');
-      navigate('/signup');
+      navigate('/');
     } catch (error) {
       console.error('Error deleting account:', error);
     }

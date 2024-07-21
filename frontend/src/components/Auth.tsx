@@ -11,13 +11,13 @@ import { userCredentialAtom } from "../store/atoms/userAtom";
 
 //have a separate sign up and signin component
 
-export const Auth = ({ type }: { type: "signup" | "signin" }) => {
+export const Auth = ({ type }: { type: "/" | "signin" }) => {
     const [postInputs, setPostInputs] = useRecoilState<SignupInput>(userCredentialAtom);
     const navigate = useNavigate();
     
     async function sendRequest () {
       try{
-        const response =  await axios.post(`${BACKEND_URL}/api/v1/user/${type=== "signup" ? "signup": "signin"}`,postInputs)
+        const response =  await axios.post(`${BACKEND_URL}/api/v1/user/${type=== "/" ? "signup": "signin"}`,postInputs)
         //here i get jwt as the response
         const jwt = response.data;
         localStorage.setItem("token", jwt);
@@ -42,7 +42,7 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
                 </div>
                 
                 <div className=" mt-2">
-                {type === "signup" ? <LabelledInput 
+                {type === "/" ? <LabelledInput 
                     label="Username" 
                     placeholder="Enter your username" 
                     onChange={(e) => {
@@ -80,7 +80,7 @@ export const Auth = ({ type }: { type: "signup" | "signin" }) => {
                     
                 />
 
-                <button onClick= {sendRequest}type="button" className="text-white bg-gray-900 hover:bg-gray-700  font-medium rounded-md text-sm px-5 py-3 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 w-full mt-6 ">{type === "signup" ? "Sign up": "Sign in"}</button>
+                <button onClick= {sendRequest}type="button" className="text-white bg-gray-900 hover:bg-gray-700  font-medium rounded-md text-sm px-5 py-3 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 w-full mt-6 ">{type === "/" ? "Sign up": "Sign in"}</button>
                 </div>
 
                 

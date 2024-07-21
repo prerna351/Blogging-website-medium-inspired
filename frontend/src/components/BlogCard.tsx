@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { Avatar } from "./AvatarComponent";
 import { useState } from "react";
 
@@ -9,7 +9,6 @@ export interface BlogCardProps {
     title: string,
     content: string,
     publishedDate: number,
-    titleFontSize: string;
     isAuthor?: boolean; // New prop to check if the current user is the author
     onDelete?: (id: number) => void; // Handler for delete action
 }
@@ -21,12 +20,18 @@ export const BlogCard = ({
                 title,
                 content,
                 publishedDate,
-                titleFontSize,
+                
                 isAuthor,
                 onDelete,
             }: BlogCardProps) => {
                 
             const [showDropdown, setShowDropdown] = useState(false);
+            const navigate = useNavigate();
+
+            const handleUpdate = () => {
+                navigate(`/edit/${id}`)
+            }
+
             const handleDelete = () => {
                 if(onDelete){
                     onDelete(id)
@@ -34,19 +39,19 @@ export const BlogCard = ({
             }
             return (
                 
-                    <div className=" p-8 border-b w-full max-w-full  space-x-2 grid grid-cols-12  ">
+                    <div className=" py-5 md:p-8 border-b w-full max-w-full  space-x-2 grid grid-cols-12  ">
                        <div className=" col-span-8  "> 
 
                             <div className="flex gap-2  items-center">
-                                <div className="flex flex-row  w-6 h-6  justify-center items-center">
+                                <div className="flex flex-row z-0 w-6 h-6  justify-center items-center">
                                     <Avatar name={authorName} size={6}></Avatar>
                                 </div>
-                                <div >{authorName}</div> 
+                                <div className="text-xs md:text-md">{authorName}</div> 
                                 <span className="text-gray-400 text-[6px]">&#9679;</span> 
-                                <span className="text-gray-600">{new Date(publishedDate).toLocaleDateString()}</span>
+                                <span className="text-gray-600 text-xs md:text-md">{new Date(publishedDate).toLocaleDateString()}</span>
                             </div>
                             <Link to={`/blog/${id}`}>
-                                <div className={`font-extrabold text-${titleFontSize} mt-4`}>
+                                <div className={`font-extrabold text-lg md:text-2xl mt-4`}>
                                     {title}
                                 </div>
                                 <div className=" lg:text-md font-medium text-gray-500 mt-2">
@@ -59,15 +64,16 @@ export const BlogCard = ({
                         </div>
 
                        {/* image   */}
-                     <div className=" col-span-4 space-y-16  px-5 ">
-                        <div className=" flex flex-col  overflow-x-clip items-center ">
-                            <img className=" max-w-44 object-cover h-auto lg:h-32" src="/image1.jpeg" alt="image1" />
+                     <div className=" col-span-4  space-y-4   lg:px-3 ">
+                        <div className="flex flex-col  justify-between h-full">
+                        <div className=" flex flex-col overflow-x-clip mt-8  items-center ">
+                            <img className=" max-w-44 object-cover  h-auto lg:h-32" src="/image1.jpeg" alt="image1" />
                         </div>
 
                         {/* menubutton  */}
                         {isAuthor?
-                            <div className="flex justify-end">
-                                <div className="relative">
+                            <div className="flex  justify-end">
+                                <div className="relative  ">
                                     <button onClick={() => setShowDropdown(!showDropdown)} id="dropdownButton" data-dropdown-toggle="dropdown" className="inline-block text-gray-600  hover:bg-gray-100  focus:outline-none   rounded-lg text-sm p-1.5" type="button">
                                         <span className="sr-only">Open dropdown</span>
                                         <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 3">
@@ -75,18 +81,18 @@ export const BlogCard = ({
                                         </svg>
                                     </button>
                                     {showDropdown && (
-                                    <div className="absolute left-0 bottom-10 mt-2 w-48 bg-white rounded-sm shadow-lg z-50">
+                                    <div className="absolute -left-[164px] lg:left-0 bottom-10 mt-2 w-48 bg-white rounded-sm shadow-lg z-50">
                                         <button
                                             className=" w-full text-left px-5 py-3 font-semibold text-sm text-gray-600 hover:text-gray-900 "
-                                            // onClick={handleDelete}
+                                            onClick={handleUpdate}
                                         >
-                                            Update
+                                            Edit Story
                                         </button>
                                         <button
                                             className="block w-full text-left px-5 py-3 font-semibold text-sm text-gray-600 hover:text-red-700 "
                                             onClick={handleDelete}
                                         >
-                                            Delete
+                                            Delete Story
                                         </button>
                                     </div>
                                 )}
@@ -94,6 +100,7 @@ export const BlogCard = ({
                             
                             </div>
                             : null}
+                           </div> 
                      </div>
                 </div>
                 

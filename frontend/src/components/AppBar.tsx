@@ -24,7 +24,7 @@ export const AppBar : React.FC<AppBarProps> = ({ label,  onClick }) => {
         {/* logo  */}
         <div className="flex gap-6 ">
           <div className="font-bold  text-2xl">
-            <Link to={'/blogs'}>Medium</Link>
+            <Link to={'/blogs'}>InspireInk</Link>
           </div>
           
           <SearchComponent ></SearchComponent>

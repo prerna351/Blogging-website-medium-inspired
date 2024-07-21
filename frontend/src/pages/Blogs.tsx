@@ -50,8 +50,8 @@ export const Blogs = () => {
         <AppBar onClick={() => {
           navigate('/createBlog')
       }}  label="write"></AppBar>
-    <div className="w-screen flex-1 flex justify-center">  
-      <div className="overflow-x-hidden flex p-5 w-screen max-w-screen-lg justify-center flex-col items-center ">
+    <div className="w-screen  flex-1 flex justify-center">  
+      <div className="overflow-x-hidden  flex p-5 w-screen max-w-screen-lg justify-center flex-col items-center ">
         {filteredBlogs.length === 0 ? (
             <div className="mt-10">No blogs found.</div>
           ) : (
@@ -63,7 +63,6 @@ export const Blogs = () => {
                 title={blog.title}
                 content={blog.content}
                 publishedDate={blog.createdAt}
-                titleFontSize={'3xl'}
                 isAuthor={false}
               ></BlogCard>
             ))

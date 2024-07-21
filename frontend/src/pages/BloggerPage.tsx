@@ -64,11 +64,11 @@ export const BloggerProfilePage = () => {
           navigate('/createBlog')
       }}  label="write"></AppBar>
 
-        <div className="w-screen  z-10 flex-1 px-4 sm:px-8 md:px-16 lg:px-32 xl:44 flex justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-12 space-x-10  lg:space-x-20 h-auto w-full md:max-w-screen-xl">
+        <div className="w-screen  z-10 flex-1 px-4 sm:px-8 md:px-16 lg:px-40  flex justify-center">
+                <div className="grid grid-cols-1 md:grid-cols-12 space-x-6  lg:space-x-10 h-auto w-full md:max-w-screen-xl">
 
-                    <div className="col-span-1 md:col-span-7 px-2">
-                        <div className=" border-b-2 py-8 mt-12 mb-8">
+                    <div className="col-span-1 md:col-span-7  ">
+                        <div className=" border-b-2 py-8 mt-12  mb-8">
                             <div className="text-2xl md:text-4xl  pl-8 font-bold">
                                 Your Stories
                             </div>
@@ -86,7 +86,7 @@ export const BloggerProfilePage = () => {
                                     title={blog.title}
                                     content={blog.content}
                                     publishedDate={blog.createdAt}
-                                    titleFontSize={'xl'}
+                                    
                                     isAuthor = {true}
                                     onDelete={handleDelete}
                                 ></BlogCard>

@@ -43,6 +43,7 @@ export const TextEditor:React.FC = () => {
             console.log(error)
         }
     };
+    
   return (
     <div className='overscroll-none'>
       <AppBar label="Publish"   onClick={handlePublish} ></AppBar>

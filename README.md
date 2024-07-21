@@ -7,13 +7,8 @@ add pagination
 
 -do caching: if i open a blog. cache it. the backend should not fetch the blog again
 
-app bar
-- avatar : fix the on click menu
-        
-
-
-add an update feature on the frontend
 add a nice color scheme to the project
+add feature to add an image
 
 textEditor page - disable the publish button untill their is content in title and content 
                 
@@ -32,3 +27,6 @@ added search component in frontend + functionality-->
 
 <!-- app bar- avatar : onclick go to page to display all that user's details + blogs -->
         
+<!-- app bar
+- avatar : fix the on click menu -->
+<!-- add an update feature on the frontend -->

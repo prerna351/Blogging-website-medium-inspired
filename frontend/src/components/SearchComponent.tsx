@@ -33,7 +33,7 @@ export const SearchComponent = () => {
 
   return (
     <div >
-      <input type="text" className='hidden md:block min-w-10  bg-gray-100 focus:outline-none py-2 px-5 placeholder:text-gray-500 rounded-3xl' placeholder='Search' onChange={handleSearch} />
+      <input type="text" className=' hidden md:block min-w-10  bg-gray-100 focus:outline-none py-2 px-3 md:px-5 placeholder:text-gray-500 rounded-3xl' placeholder='Search' onChange={handleSearch} />
       
     </div>
   );

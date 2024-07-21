@@ -33,7 +33,7 @@ export const EditBlog = () => {
     e.preventDefault();
     try {
       await axios.put(
-        `${BACKEND_URL}/api/v1/blog/`,
+        `${BACKEND_URL}/api/v1/blog/update-blog`,
         { title, content, blogId  },
         {
           headers: {

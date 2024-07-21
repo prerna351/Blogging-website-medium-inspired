@@ -30,10 +30,10 @@ export const TextEditor:React.FC = () => {
                     Authorization: localStorage.getItem("token")
                 }
             }        
-        ).then(response => {
+        ).then(() => {
             // console.log(response.data.id);
             console.log("Blog published successfully");
-            navigate(`/blog/${response.data.id}`)
+            navigate(`/blogs`)
            
         }).catch(error => {
             console.log(error);

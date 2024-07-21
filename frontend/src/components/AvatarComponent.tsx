@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Profile } from "./Profile";
-import { Link } from "react-router-dom";
+
 
 
 
@@ -20,10 +20,7 @@ export function Avatar({name, size} :{name: string, size: number} ){
 
             {showTooltip && (
                 <Profile  ></Profile>
-                // <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 p-2 bg-white border border-gray-200 rounded shadow-lg z-10 w-48">
-                //     <p className="text-sm text-gray-700 font-semibold">{name}</p>
-                //     <p className="text-xs text-gray-500">User Profile Info</p>
-                // </div>
+                
             )}
             
         </div>
@@ -32,4 +29,3 @@ export function Avatar({name, size} :{name: string, size: number} ){
     )
 }
 
-// onMouseLeave={() => setShowTooltip(false)}

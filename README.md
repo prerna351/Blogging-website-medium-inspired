@@ -9,8 +9,9 @@ add pagination
 
 add a nice color scheme to the project
 add feature to add an image
-
+format date
 textEditor page - disable the publish button untill their is content in title and content 
+add editBlog page 
                 
 for smaller screen make the search bar an icon and then expand to smaller search bar 
 ------------------------------------------------------------------------ -->

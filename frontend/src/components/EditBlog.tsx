@@ -6,7 +6,7 @@ import { BACKEND_URL } from "../config";
 
 export const EditBlog = () => {
 
-    const {id} = useParams<{id: string}>() ;
+    const {id} = useParams() ;
     const blogId = Number(id);
     const navigate = useNavigate();
     const [title, setTitle] = useState("");
@@ -32,6 +32,7 @@ export const EditBlog = () => {
   const handleUpdate = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
+       
       await axios.put(
         `${BACKEND_URL}/api/v1/blog/update-blog`,
         { title, content, blogId  },
@@ -50,7 +51,7 @@ export const EditBlog = () => {
     <div>
       <form onSubmit={handleUpdate} className="max-w-2xl mx-auto p-4">
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="title">
+          <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="title">
             Title
           </label>
           <input
@@ -58,20 +59,20 @@ export const EditBlog = () => {
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className=" appearance-none  rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             required
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="content">
+          <label className="block text-gray-700 text-lg font-bold mb-2" htmlFor="content">
             Content
           </label>
           <textarea
             id="content"
             value={content}
             onChange={(e) => setContent(e.target.value)}
-            rows={20}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            rows={24}
+            className=" appearance-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             required
           />
         </div>

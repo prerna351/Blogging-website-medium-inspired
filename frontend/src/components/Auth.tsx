@@ -32,11 +32,11 @@ export const Auth = ({ type }: { type: "/" | "signin" }) => {
         <>
             <div className="max-w-md lg:w-1/2  flex flex-col gap-2">
                 <div className="text-3xl text-center font-extrabold">
-                    Create an account
+                    {type === "/" ? "Create an account" : "Login to your account"}
                 </div>
                 <div className="text-gray-500 text-center">
                     {type === "signin" ? "Don't have an account?" : "Already have an account?"} 
-                    <Link className="px-1 underline text-yellow-400" to={type === "signin" ? "/signup" : "/signin"}>
+                    <Link className="px-1 underline text-yellow-400" to={type === "signin" ? "/" : "/signin"}>
                         {type === "signin" ? "Sign up" : "Login"}
                     </Link>
                 </div>

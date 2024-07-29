@@ -9,11 +9,11 @@ import { UserAvatar } from "./UserAvatar.tsx";
 
 interface AppBarProps {
   label: string;
-  onClick: () => void;
+  onClick?: () => void;
   
 }
 
-// const blogs = useRecoilValue(blogsAtom);
+
 
 export const AppBar : React.FC<AppBarProps> = ({ label,  onClick }) => {
   

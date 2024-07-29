@@ -3,17 +3,27 @@
 <!-- blog page
 i have fetched all the blogs at once and stored in an atom and thus caching not needed for opening a particular blog
 but when goes back in my tab the blogs are fetched again
+
 add pagination  
 
 -do caching: if i open a blog. cache it. the backend should not fetch the blog again
 
 add a nice color scheme to the project
+
 add feature to add an image
+
 format date
+
 textEditor page - disable the publish button untill their is content in title and content 
 add editBlog page 
                 
-for smaller screen make the search bar an icon and then expand to smaller search bar 
+
+
+fix the dropdown menu on app bar
+
+add skeleton to my stories 
+
+enhance the styling of authentication pages
 ------------------------------------------------------------------------ -->
 <!-- DONE
 added toggle password visibliity
@@ -31,3 +41,4 @@ added search component in frontend + functionality-->
 <!-- app bar
 - avatar : fix the on click menu -->
 <!-- add an update feature on the frontend -->
+<!-- for smaller screen make the search bar an icon and then expand to smaller search bar -->

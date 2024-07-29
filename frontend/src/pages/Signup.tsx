@@ -4,8 +4,8 @@ import { Quote } from "../components/Quote";
 
 export const Signup = () => {
   return (
-    <div className="lg:grid grid-cols-2">
-      <div  className="h-screen flex  justify-center items-center flex-col">
+    <div className="grid grid-cols-1 lg:grid-cols-2 px-4">
+      <div  className="h-screen flex  justify-center md:items-center flex-col">
         <Auth type="/"></Auth>
       </div>
       <div className="hidden lg:flex lg:flex-col lg:justify-center bg-gray-100 h-screen ">

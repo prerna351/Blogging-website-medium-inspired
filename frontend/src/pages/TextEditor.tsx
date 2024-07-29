@@ -46,7 +46,7 @@ export const TextEditor:React.FC = () => {
     
   return (
     <div className='overscroll-none'>
-      <AppBar label="Publish"   onClick={handlePublish} ></AppBar>
+      <AppBar page={"textEditor"} label="Publish"   onClick={handlePublish} ></AppBar>
         {error && <div>{error}</div>}
       <CreateBlogArea title={title} setTitle={setTitle} content={content} setContent={setContent} rows={20}></CreateBlogArea>
     </div>

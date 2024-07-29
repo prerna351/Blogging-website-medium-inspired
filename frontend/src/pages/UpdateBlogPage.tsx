@@ -30,7 +30,7 @@ export const UpdateBlogPage = () => {
   };
   return (
     <div>
-      <AppBar onClick={handleUpdate} label="Update"></AppBar>
+      <AppBar page={"updateBlog"} onClick={handleUpdate} label="Update"></AppBar>
 
       <div>
         <EditBlog />

@@ -23,7 +23,7 @@ export const Blog = () => {
 
   if(loading){
     return <div >
-      <AppBar label="write" onClick={() => {
+      <AppBar page={"fullBlog"} label="write" onClick={() => {
       navigate('/createBlog')
   }}></AppBar>
 
@@ -42,8 +42,8 @@ export const Blog = () => {
  
   return (
     
-    <div >
-      <AppBar label={"Write"}  onClick={() => {
+    <div className="overflow-x-clip">
+      <AppBar page={"fullBlog"} label={"Write"}  onClick={() => {
           navigate('/createBlog')
       }}></AppBar>
       

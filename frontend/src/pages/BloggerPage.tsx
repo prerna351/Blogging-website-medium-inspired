@@ -8,6 +8,7 @@ import { userBlogsAtom } from "../store/atoms/userBlogsAtom";
 import { loadingAtom } from "../store/atoms/blogsAtom";
 import axios from "axios";
 import { BACKEND_URL } from "../config";
+import { Skeleton } from "../components/Skeleton";
 
 
 
@@ -47,29 +48,29 @@ export const BloggerProfilePage = () => {
     if (loading) {
         return (
             <div>
-                <AppBar label="Home" onClick={() => navigate('/')} />
-                {/* <div className="flex flex-col justify-center items-center">
+                <AppBar page={"bloggerProfile"} label="Home" onClick={() => navigate('/')} />
+                <div className="flex flex-col justify-center items-center">
                     <Skeleton />
                     <Skeleton />
                     <Skeleton />
                     <Skeleton />
                     <Skeleton />
-                </div> */}Loading....
+                </div>
             </div>
         );
     }
   return (
     <div>
-      <AppBar onClick={() => {
+      <AppBar page={"bloggerProfile"} onClick={() => {
           navigate('/createBlog')
       }}  label="write"></AppBar>
 
         <div className="w-screen  z-10 flex-1 px-4 sm:px-8 md:px-16 lg:px-40  flex justify-center">
-                <div className="grid grid-cols-1 md:grid-cols-12 space-x-6  lg:space-x-10 h-auto w-full md:max-w-screen-xl">
+                <div className="grid grid-cols-1 md:grid-cols-12 space-x-0 md:space-x-6  lg:space-x-10 h-auto w-full md:max-w-screen-xl">
 
                     <div className="col-span-1 md:col-span-7  ">
-                        <div className=" border-b-2 py-8 mt-12  mb-8">
-                            <div className="text-2xl md:text-4xl  pl-8 font-bold">
+                        <div className=" border-b-2 py-8 mt-0 md:mt-12  mb-8">
+                            <div className="text-2xl md:text-4xl pl-0 md:pl-8 font-bold">
                                 Your Stories
                             </div>
                         </div>
@@ -94,7 +95,7 @@ export const BloggerProfilePage = () => {
                             }
                         </div>
                     </div>
-                    <div className="col-span-1 md:col-span-5  px-2 pb-5">
+                    <div className="col-span-1 md:col-span-5  px-0 md:px-2 pb-5">
                         
                             <div className=" mt-12 p-1">
                                 <div className="w-20 h-20 rounded-full bg-yellow-300"></div>

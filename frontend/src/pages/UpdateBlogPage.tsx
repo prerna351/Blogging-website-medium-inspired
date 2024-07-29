@@ -2,18 +2,18 @@
 import { AppBar } from '../components/AppBar';
 import { useNavigate } from 'react-router-dom';
 import { EditBlog } from '../components/EditBlog';
-import { useRecoilState } from 'recoil';
+import { useRecoilValue } from 'recoil';
 import { blogAtom } from '../store/atoms/blogAtom';
 import axios from 'axios';
 import { BACKEND_URL } from '../config';
 
 export const UpdateBlogPage = () => {
-  const [blog, setBlog] = useRecoilState(blogAtom);
+  const blog = useRecoilValue(blogAtom);
   const navigate = useNavigate();
 
   const handleUpdate = async () => {
     try {
-      console.log("Blog Data:", { title: blog.title, content: blog.content, id: blog.blogId });
+      
       await axios.put(
         `${BACKEND_URL}/api/v1/blog/update-blog`,
         { title: blog.title, content: blog.content, id: blog.blogId },

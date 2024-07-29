@@ -16,7 +16,10 @@ export const FullBlog = ({blogDetails} : {blogDetails: Blog}) => {
             <div className="mb-6 ">
              {new Date(blogDetails.createdAt).toLocaleDateString()}
             </div>
-            <div>
+            <div className="image w-auto h-96 flex justify-center mt-5">
+            <img className="min-w-full object-cover" src="/image2.jpg" alt="image1" />
+            </div>
+            <div className='mt-10'>
                 {blogDetails.content}
             </div>
         </div>

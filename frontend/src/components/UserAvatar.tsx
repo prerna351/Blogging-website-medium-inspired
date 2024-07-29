@@ -54,8 +54,8 @@ export const UserAvatar = () => {
     <div>
         {/* userIcon  */}
         <div>
-              <div onClick={() => setShowUserMenu(!ShowUserMenu)} className={`relative cursor-pointer inline-flex items-center justify-center w-8 h-8 md:w-10 md:h-10 overflow-hidden bg-blue-300  rounded-full `}>
-                <span className="font-medium text-xs text-center text-gray-600 ">{userName.name? userName.name.charAt(0).toUpperCase(): 'A'}</span>
+              <div onClick={() => setShowUserMenu(!ShowUserMenu)} className={`relative cursor-pointer inline-flex items-center justify-center w-8 h-8 md:w-10 md:h-10 overflow-hidden bg-yellow-400  rounded-full `}>
+                <span className="font-medium text-xs text-center text-gray-800 ">{userName.name? userName.name.charAt(0).toUpperCase(): 'A'}</span>
               </div>
 
             {

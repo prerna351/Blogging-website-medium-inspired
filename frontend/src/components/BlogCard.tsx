@@ -39,7 +39,7 @@ export const BlogCard = ({
             }
             return (
                 
-                    <div className=" py-5 md:p-8 border-b w-full max-w-full  space-x-2 grid grid-cols-12  ">
+                    <div className=" py-5 md:p-8 border-b w-full max-w-full bg-white space-x-2 grid grid-cols-12  ">
                        <div className=" col-span-8  "> 
 
                             <div className="flex gap-2  items-center">
@@ -67,16 +67,16 @@ export const BlogCard = ({
                      <div className=" col-span-4  space-y-4   lg:px-3 ">
                         <div className="flex flex-col  justify-between h-full">
                         <div className=" flex flex-col overflow-x-clip mt-8  items-center ">
-                            <img className=" max-w-44 object-cover  h-auto lg:h-32" src="/image1.jpeg" alt="image1" />
+                            <img className=" max-w-44 object-cover  h-auto lg:h-32" src="/image1.jpg" alt="image1" />
                         </div>
 
                         {/* menubutton  */}
                         {isAuthor?
                             <div className="flex  justify-end">
                                 <div className="relative  ">
-                                    <button onClick={() => setShowDropdown(!showDropdown)} id="dropdownButton" data-dropdown-toggle="dropdown" className="inline-block text-gray-600  hover:bg-gray-100  focus:outline-none   rounded-lg text-sm p-1.5" type="button">
+                                    <button onClick={() => setShowDropdown(!showDropdown)}  className="inline-block text-gray-600  hover:bg-gray-100  focus:outline-none   rounded-lg text-sm p-1.5" type="button">
                                         <span className="sr-only">Open dropdown</span>
-                                        <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 3">
+                                        <svg className="w-5 h-5 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 3">
                                             <path d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"/>
                                         </svg>
                                     </button>

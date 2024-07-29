@@ -36,7 +36,7 @@ export const Auth = ({ type }: { type: "/" | "signin" }) => {
                 </div>
                 <div className="text-gray-500 text-center">
                     {type === "signin" ? "Don't have an account?" : "Already have an account?"} 
-                    <Link className="px-1 underline text-yellow-400" to={type === "signin" ? "/" : "/signin"}>
+                    <Link className="px-1 underline text-yellow-500" to={type === "signin" ? "/" : "/signin"}>
                         {type === "signin" ? "Sign up" : "Login"}
                     </Link>
                 </div>
@@ -109,10 +109,10 @@ isPasswordVisible
             <label  className="block mb-2 text-sm font-bold text-gray-900 pt-4">{label}</label>
 
             {label === 'Password'? 
-                <div className="max-w-sm">
+                <div className="max-w-md">
                 
-                <div className="relative">
-                    <input onChange={onChange}  type={isPasswordVisible? "text" : "password"} className=" border border-gray-300 py-3 px-4 block w-full  rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none" placeholder={placeholder}/>
+                <div className="relative  ">
+                    <input onChange={onChange}  type={isPasswordVisible? "text" : "password"} className=" border border-gray-300 py-3 px-4 block w-full  rounded-lg text-sm  disabled:opacity-50 disabled:pointer-events-none" placeholder={placeholder}/>
                     <button onClick={togglePasswordView} type="button" className="absolute top-0 end-0 p-3.5 rounded-e-md">
                     <svg className="flex-shrink-0 size-3.5 text-gray-400" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path

@@ -53,7 +53,6 @@ A full-stack blogging platform built with React, TypeScript, Tailwind CSS, Recoi
 
 -   [Features](#features)
 -   [Tech Stack](#tech-stack)
--   [Usage](#usage)
 
 ## Features
 

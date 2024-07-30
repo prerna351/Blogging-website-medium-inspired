@@ -47,7 +47,7 @@ added search component in frontend + functionality-->
 
 # Blogging Website
 
-A full-stack blogging platform built with React, TypeScript, Tailwind CSS, Recoil, Node.js,  Prisma, and PostgreSQL, deployed on Cloudflare 
+A full-stack blogging platform built with React, TypeScript, Tailwind CSS, Recoil, Node.js, Hono, Prisma, and PostgreSQL, deployed on Cloudflare 
 
 ## Table of Contents
 
